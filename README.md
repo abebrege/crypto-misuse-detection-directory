@@ -1,6 +1,6 @@
-# Awesome Crypto Misuse Detection
+# Crypto Misuse Detection Directory
 
-> Last updated: Sep 11, 2026
+> Last updated: Sep 13, 2026
 
 Tools, papers, benchmarks, and resources regarding cryptographic-API misuse detection.
 
