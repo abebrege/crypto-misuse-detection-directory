@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Awesome Crypto Misuse Detection</title>
+    <meta name="description" content="Tools, papers, benchmarks, and resources regarding cryptographic-API misuse detection." />
+    <link rel="icon" type="image/svg+xml" href="icons.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="theme.css" />
+    <script src="theme-toggle.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <a class="wordmark" href="#top">Awesome Crypto Misuse Detection</a>
+        <nav class="site-nav">
+          <a href="#beyond-detectors">Beyond Detectors</a>
+          <a href="#detectors">Detectors</a>
+          <a href="#benchmarks">Benchmarks</a>
+          <a href="#analysis-frameworks">Frameworks</a>
+        </nav>
+        <button type="button" id="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode">☾</button>
+      </header>
+
+      <div class="hero">
+        <p>Tools, papers, benchmarks, and resources regarding cryptographic-API misuse detection.</p>
+        <p>Open an issue or PR if you'd like to contribute; revisions and additions are welcome.</p>
+      </div>
+
+      <main class="content" id="top">
+        <h2 id="contents">Contents</h2>
+        <ul>
+          <li><a href="#beyond-detectors">Beyond Detectors</a>
+            <ul>
+              <li><a href="#surveys">Surveys</a></li>
+              <li><a href="#evaluation-and-meta-studies">Evaluation and Meta-Studies</a></li>
+              <li><a href="#lessons-learned">Lessons Learned</a></li>
+            </ul>
+          </li>
+          <li><a href="#detectors">Detectors</a>
+            <ul>
+              <li><a href="#java">Java</a></li>
+              <li><a href="#python">Python</a></li>
+              <li><a href="#go">Go</a></li>
+              <li><a href="#c-and-c">C and C++</a></li>
+              <li><a href="#javascript">JavaScript</a></li>
+              <li><a href="#android">Android</a></li>
+              <li><a href="#llm-based">LLM-Based</a></li>
+              <li><a href="#industry--oss">Industry / OSS</a></li>
+              <li><a href="#other">Other</a></li>
+            </ul>
+          </li>
+          <li><a href="#llm-related">LLM-Related</a></li>
+          <li><a href="#repair">Repair</a></li>
+          <li><a href="#benchmarks">Benchmarks</a></li>
+          <li><a href="#analysis-frameworks">Analysis Frameworks</a></li>
+          <li><a href="#other-1">Other</a></li>
+        </ul>
+
+        <h2 id="beyond-detectors">Beyond Detectors</h2>
+        <h3 id="surveys">Surveys</h3>
+        <ul>
+          <li><strong><a href="https://arxiv.org/abs/2604.24085">Evaluating Cryptographic API Misuse Detectors for Go</a></strong> (2026) — <a href="https://github.com/ASSERT-KTH/crypto-api-misuse-detectors-go">artifact</a></li>
+          <li><strong><a href="https://dl.acm.org/doi/full/10.1145/3735968">Detecting Misuse of Security APIs: A Systematic Review</a></strong> (ACM Computing Surveys 2025) — <a href="https://arxiv.org/abs/2306.08869">preprint</a></li>
+          <li><strong><a href="https://people.cs.vt.edu/nm8247/publications/TSE3150302-2.pdf">Automatic Detection of Java Cryptographic API Misuses: Are We There Yet?</a></strong> (IEEE TSE 2023) — <a href="https://github.com/NiSE-Virginia-Tech/TSE-2022">artifact</a></li>
+        </ul>
+
+        <h3 id="evaluation-and-meta-studies">Evaluation and Meta-Studies</h3>
+        <ul>
+          <li><strong><a href="https://dl.acm.org/doi/10.1145/3796221">Mutation-based Evaluation of Cryptographic API Misuse Detectors</a></strong> (ACM TOPS 2026)</li>
+          <li><strong><a href="https://arxiv.org/abs/2510.13102">From base cases to backdoors: An Empirical Study of Unnatural Crypto-API Misuse</a></strong> (2025)</li>
+          <li><strong><a href="https://www.ndss-symposium.org/ndss-paper/towards-precise-reporting-of-cryptographic-misuses/">Towards Precise Reporting of Cryptographic Misuses</a></strong> (NDSS 2024) — <a href="https://www.ndss-symposium.org/wp-content/uploads/2024-1032-paper.pdf">PDF</a> — <a href="https://github.com/kynehc/crypto-detector-evaluation-artifacts">artifact</a></li>
+          <li><strong><a href="https://dl.acm.org/doi/10.1145/3579856.3582830">Benchmarking the Benchmarks</a></strong> (ISSTA 2023)</li>
+          <li><strong><a href="https://arxiv.org/abs/2112.04037">Evaluation of Static Vulnerability Detection Tools with Java Cryptographic API Benchmarks</a></strong> (IEEE TSE 2023)</li>
+          <li><strong><a href="https://dl.acm.org/doi/fullHtml/10.1145/3439802">Systematic Mutation-Based Evaluation of the Soundness of Security-Focused Android Static Analysis Techniques</a></strong> (ACM TOPS 2021)</li>
+          <li><strong><a href="https://ieeexplore.ieee.org/document/8863426">Understanding How to Use Static Analysis Tools for Detecting Cryptography Misuse in Software</a></strong> (IEEE Trans. Reliability 2019)</li>
+          <li><strong><a href="https://people.csail.mit.edu/nickolai/papers/lazar-cryptobugs.pdf">Why Does Cryptographic Software Fail?</a></strong> (APSys 2014)</li>
+        </ul>
+
+        <h3 id="lessons-learned">Lessons Learned</h3>
+        <ul>
+          <li><strong><a href="https://arxiv.org/abs/2307.16325">"False negative -- that one is going to kill you": Understanding Industry Perspectives of Static Analysis based Security Testing</a></strong> (IEEE S&amp;P 2024) — <a href="https://github.com/Secure-Platforms-Lab-W-M/false-negatives-kill">artifact</a></li>
+          <li><strong><a href="https://ieeexplore.ieee.org/document/9782873">Being the Developers' Friend: Our Experience Developing a High-Precision Tool for Secure Coding</a></strong> (2022)</li>
+          <li><strong><a href="https://ieeexplore.ieee.org/document/8816738">Negative Results on Mining Crypto-API Usage Rules</a></strong> (MSR 2019)</li>
+        </ul>
+
+        <h2 id="detectors">Detectors</h2>
+        <h3 id="java">Java</h3>
+        <ul>
+          <li><strong><a href="https://arxiv.org/abs/2503.19531">Cryptoscope</a></strong> (2025)</li>
+          <li><strong><a href="https://ieeexplore.ieee.org/document/9519501">CryLogger</a></strong> (IEEE S&amp;P 2021) — <a href="https://github.com/lucapiccolboni/crylogger">artifact</a></li>
+          <li><strong><a href="https://scg.unibe.ch/archive/papers/Hazh20c.pdf">Java Cryptography Uses in the Wild</a></strong> (ESEM 2020)</li>
+          <li><strong><a href="https://www.bodden.de/pubs/krueger20cognicryptgen.pdf">CogniCrypt_GEN</a></strong> (CGO 2020) — <a href="https://zenodo.org/records/3597725">artifact</a></li>
+          <li><strong><a href="https://arxiv.org/abs/1806.06881">CryptoGuard</a></strong> (CCS 2019) — <a href="https://github.com/CryptoGuardOSS/cryptoguard">code</a></li>
+          <li><strong><a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ECOOP.2018.10">CrySL / CogniCrypt_SAST</a></strong> (ECOOP 2018) — <a href="https://sanadlab.org/assets/pdf/KrugerTSE2021.pdf">journal version, TSE 2021</a> — <a href="https://github.com/CROSSINGTUD/CryptoAnalysis">code</a> — <a href="https://github.com/CROSSINGTUD/Crypto-API-Rules">rules</a></li>
+          <li><strong><a href="https://ieeexplore.ieee.org/document/8115707">CogniCrypt</a></strong> (ASE 2017)</li>
+        </ul>
+
+        <h3 id="python">Python</h3>
+        <ul>
+          <li><strong><a href="https://ieeexplore.ieee.org/document/10474052/">Cryptolation — Methods and Benchmark for Detecting Cryptographic API Misuses in Python</a></strong> (IEEE TSE 2024)</li>
+          <li><strong><a href="https://doi.org/10.1109/ACSAC63791.2024.00088">CryptoPyt</a></strong> (ACSAC 2024)</li>
+          <li><strong><a href="https://dl.acm.org/doi/10.1145/3475716.3484195">LICMA — Python Crypto Misuses in the Wild</a></strong> (ESEM 2021) — <a href="https://github.com/stg-tud/licma">tool</a> — <a href="https://github.com/stg-tud/python-crypto-misuses-study-results">dataset</a></li>
+        </ul>
+
+        <h3 id="go">Go</h3>
+        <ul>
+          <li><strong><a href="https://arxiv.org/abs/2604.24085">Evaluating Cryptographic API Misuse Detectors for Go</a></strong> (2026)</li>
+          <li><strong><a href="https://dl.acm.org/doi/10.1145/3658644.3690276">Gopher</a></strong> (CCS 2024) — <a href="https://github.com/yxzhang2024/gopher">code</a></li>
+          <li><strong><a href="https://dl.acm.org/doi/10.1145/3564625.3567989">CryptoGo</a></strong> (ACSAC 2022)</li>
+        </ul>
+
+        <h3 id="c-and-c">C and C++</h3>
+        <ul>
+          <li><strong><a href="https://ieeexplore.ieee.org/document/9524495">TaintCrypt — From Theory to Code: Identifying Logical Flaws in Cryptographic Implementations in C/C++</a></strong> (IEEE TDSC 2022)</li>
+        </ul>
+
+        <h3 id="javascript">JavaScript</h3>
+        <ul>
+          <li><strong><a href="https://www.usenix.org/conference/usenixsecurity26/presentation/jia-shijie">JScamd: An Automated Static Taint Analysis Framework for Detecting Cryptographic API Misuses in JavaScript</a></strong> (USENIX Security 2026) — <a href="https://doi.org/10.5281/zenodo.20395867">artifact</a></li>
+        </ul>
+
+        <h3 id="android">Android</h3>
+        <ul>
+          <li><strong><a href="https://dl.acm.org/doi/abs/10.1145/3196494.3196538">BinsSight — Source attribution of cryptographic API misuse in Android applications</a></strong> (2018) — <a href="https://github.com/iim/binsight">code</a></li>
+          <li><strong><a href="https://ieeexplore.ieee.org/abstract/document/7958574">Stack Overflow Considered Harmful? The Impact of Copy&amp;Paste on Android Application Security</a></strong></li>
+          <li><strong><a href="https://eudl.eu/doi/10.4108/eai.3-12-2015.2262471">Evaluation of Cryptography Usage in Android Applications</a></strong> (BICT 2016)</li>
+          <li><strong><a href="http://lilicoding.github.io/SA3Repo/papers/2014_shuai2014modelling.pdf">CMA — Modeling analysis and auto-detection of cryptographic misuse in Android applications</a></strong> (DASC 2014)</li>
+          <li><strong><a href="https://dl.acm.org/doi/abs/10.1145/3183575">Amandroid: A precise and general inter-component data flow analysis framework for security vetting of Android apps</a></strong> (2014) — <a href="https://pag.arguslab.org/argus-saf">about</a></li>
+          <li><strong><a href="https://dl.acm.org/doi/10.1145/2508859.2516693">CryptoLint — An empirical study of cryptographic misuse in android applications</a></strong> (CCS 2013)</li>
+          <li><strong><a href="https://dl.acm.org/doi/abs/10.1145/2382196.2382205">MalloDroid — Why Eve and Mallory love Android: An analysis of Android SSL (in) security</a></strong> (2012)</li>
+        </ul>
+
+        <h3 id="llm-based">LLM-Based</h3>
+        <ul>
+          <li><strong><a href="https://ieeexplore.ieee.org/abstract/document/11582031">From Hallucination to Precision: Enhancing LLM Detection of Python Cryptographic API Misuses with Chain-of-Thought Prompting</a></strong> (2026) — <a href="https://github.com/feibaoBob/LLM-based_CAMD">artifact</a></li>
+          <li><strong><a href="https://arxiv.org/abs/2407.16576">CryptoGPT — Beyond Static Pattern Matching? Rethinking Automatic Cryptographic API Misuse Detection in the Era of LLMs</a></strong> (ISSTA 2025) — <a href="https://github.com/CryptoGPT-online/CryptoGPT-online.github.io">artifact</a></li>
+          <li><strong><a href="https://ssp.korea.ac.kr/assets/papers/ASE25.pdf">CRYPTBARA</a></strong> (ASE 2025) — <a href="https://github.com/choseogyeong/CRYPTBARA">code</a></li>
+          <li><strong><a href="http://arxiv.org/abs/2508.11599">CryptoScope: Utilizing Large Language Models for Automated Cryptographic Logic Vulnerability Detection</a></strong> (2025)</li>
+          <li><strong><a href="https://link.springer.com/chapter/10.1007/978-3-031-70879-4_18">CryptoLLM: Harnessing the Power of LLMs to Detect Cryptographic API Misuse</a></strong> (ESORICS 2024)</li>
+        </ul>
+
+        <h3 id="industry--oss">Industry / OSS</h3>
+        <ul>
+          <li><a href="https://github.com/scanoss/crypto-finder">Crypto Finder</a> — <a href="https://scanoss.com/">SCANOSS</a></li>
+          <li><a href="https://github.com/snyk/cli">snyk</a> — <a href="https://snyk.io/">Snyk AI Security Platform</a></li>
+          <li><a href="https://github.com/SonarSource/sonarqube">SonarQube</a> — <a href="https://www.sonarsource.com/products/sonarqube/">Sonar</a></li>
+          <li><a href="https://github.com/opengrep/opengrep">Opengrep</a> — <a href="https://www.opengrep.dev/">Opengrep</a></li>
+          <li><a href="https://github.com/semgrep/semgrep">Semgrep</a> — <a href="https://semgrep.dev/">Semgrep</a></li>
+          <li><a href="https://github.com/spotbugs/spotbugs">SpotBugs</a></li>
+        </ul>
+
+        <h3 id="other">Other</h3>
+        <ul>
+          <li><strong><a href="https://arxiv.org/abs/2112.06146">CryptoEval</a></strong> (IET Information Security 2023)</li>
+        </ul>
+
+        <h2 id="llm-related">LLM-Related</h2>
+        <ul>
+          <li><strong><a href="https://www.sciencedirect.com/science/article/pii/S016412122500319X?via%3Dihub">Can generative AI detect and fix real-world cryptographic misuses?</a></strong> (2026)</li>
+          <li><strong><a href="https://arxiv.org/abs/2509.10814">Automatic Generation of a Cryptography Misuse Taxonomy</a></strong> (2025) — <a href="https://github.com/ufooooy/LLM-CMT">artifact</a></li>
+          <li><strong><a href="https://arxiv.org/abs/2409.06561">ChatGPT's Potential in Cryptography Misuse Detection: A Comparative Analysis with Static Analysis Tools</a></strong> (ESEM 2024)</li>
+          <li><strong><a href="https://arxiv.org/abs/2411.09772">Beyond Static Tools: Evaluating Large Language Models for Cryptographic Misuse Detection</a></strong> (2024)</li>
+        </ul>
+
+        <h2 id="repair">Repair</h2>
+        <ul>
+          <li><strong><a href="https://arxiv.org/abs/2403.07808">Supporting Error Chains in Static Analysis</a></strong> (ICSE 2024)</li>
+          <li><strong><a href="https://dl.acm.org/doi/abs/10.1145/3368308.3415419">CryptoTutor: Teaching Secure Coding Practices through Misuse Pattern Detection</a></strong> (SIGITE 2020)</li>
+          <li><strong><a href="https://dl.acm.org/doi/fullHtml/10.1145/3376121">Vulvet: Vetting of Vulnerabilities in Android Apps to Thwart Exploitation</a></strong> (ACM DTRAP 2020)</li>
+          <li><strong><a href="https://ualberta.scholaris.ca/bitstreams/eed961a8-232d-4c01-be69-461379751b9e/download">Hotfixer — Automated Hotfixes for Misuses of Crypto APIs</a></strong> (2020)</li>
+          <li><strong><a href="https://link.springer.com/chapter/10.1007/978-3-319-66399-9_13">VuRLE: Automatic vulnerability detection and repair by learning from examples</a></strong> (ESORICS 2017)</li>
+          <li><strong><a href="https://dl.acm.org/doi/10.1145/2897845.2897896">CDRep: Automatic Repair of Cryptographic Misuses in Android Applications</a></strong> (AsiaCCS 2016)</li>
+        </ul>
+
+        <h2 id="benchmarks">Benchmarks</h2>
+        <ul>
+          <li><strong><a href="https://github.com/CryptoAPI-Bench/CryptoAPI-Bench">CryptoAPI-Bench</a></strong> — Java</li>
+          <li><strong><a href="https://arxiv.org/abs/2204.06447">CamBench</a></strong> — Java</li>
+          <li><strong><a href="https://dl.acm.org/doi/10.1109/MSR.2019.00023">Parametric Crypto Misuses</a></strong> — Java</li>
+          <li><strong><a href="https://github.com/lizyen10/cryptographicAPImisuse/tree/main/src/data">PyCryptoBench</a></strong> — Python</li>
+          <li><strong><a href="https://github.com/Secure-Platforms-Lab-W-M/MASC-Artifact">MASC artifact</a></strong> — Java</li>
+          <li><strong><a href="https://github.com/stg-tud/python-crypto-misuses-study-results">LICMA study dataset</a></strong> — Python</li>
+          <li><strong><a href="https://github.com/OWASP-Benchmark/BenchmarkUtils">OWASP Benchmark</a></strong> — Java</li>
+          <li><strong><a href="https://github.com/CryptoAPI-Bench/ApacheCryptoAPI-Bench">ApacheCryptoAPI-Bench</a></strong> — Java</li>
+        </ul>
+
+        <h2 id="analysis-frameworks">Analysis Frameworks</h2>
+        <h4>Java / Android</h4>
+        <ul>
+          <li><strong><a href="https://github.com/soot-oss/SootUp">SootUp</a></strong></li>
+          <li><strong><a href="https://github.com/wala/WALA">WALA</a></strong></li>
+        </ul>
+        <h4>C / C++ / LLVM</h4>
+        <ul>
+          <li><strong><a href="https://github.com/secure-software-engineering/phasar">PhASAR</a></strong></li>
+          <li><strong><a href="https://github.com/SVF-tools/SVF">SVF</a></strong></li>
+          <li><strong><a href="https://clang-analyzer.llvm.org/">Clang Static Analyzer</a></strong></li>
+        </ul>
+        <h4>Multi-language</h4>
+        <ul>
+          <li><strong><a href="https://github.com/joernio/joern">Joern</a></strong></li>
+          <li><strong><a href="https://github.com/Fraunhofer-AISEC/cpg">cpg</a></strong></li>
+          <li><strong><a href="https://github.com/opengrep/opengrep">Opengrep</a></strong></li>
+          <li><strong><a href="https://github.com/github/codeql">CodeQL</a></strong></li>
+        </ul>
+
+        <h2 id="other-1">Other</h2>
+        <ul>
+          <li><strong><a href="https://link.springer.com/chapter/10.1007/978-3-031-57537-2_13">Analysis of Cryptographic CVEs: Lessons Learned and Perspectives</a></strong> (2024)</li>
+          <li><strong><a href="https://www.mdpi.com/2079-9292/12/11/2460">Intelligent Detection of Cryptographic Misuse in Android Applications Based on Program Slicing and Transformer-Based Classifier</a></strong> (Electronics 2023)</li>
+          <li><strong><a href="https://doi.org/10.1145/3603273.3634708">Research on Cryptographic Misuse Detection for Android Applications Based on Dynamic and Static Combination</a></strong> (AAIA 2023)</li>
+          <li><strong><a href="https://www.bodden.de/pubs/ssn22+fum.pdf">FUM: A Framework for API Usage Constraint and Misuse Classification</a></strong> (SANER 2022)</li>
+          <li><strong><a href="https://csse.szu.edu.cn/staff/xuzw/paper/2020_tase_CryptoAPI.pdf">Analyzing Cryptographic API Usages Using HMM and N-Gram</a></strong> (TASE 2020)</li>
+          <li><strong><a href="https://cacm.acm.org/magazines/2018/4/226371-lessons-from-building-static-analysis-tools-at-google/fulltext">Lessons from Building Static Analysis Tools at Google</a></strong> (CACM 2018)</li>
+          <li><strong><a href="https://dl.acm.org/doi/10.1145/3196494.3196538">Source Attribution of Cryptographic API Misuse in Android Applications</a></strong> (AsiaCCS 2018) — <a href="http://lersse-dl.ece.ubc.ca/record/324">PDF</a></li>
+          <li><strong><a href="https://files.sri.inf.ethz.ch/website/papers/diffcode-pldi2018.pdf">Inferring Crypto API Rules from Code Changes</a></strong> (PLDI 2018) — <a href="https://eth-sri.github.io/publications/paletov2018inferring">project page</a></li>
+          <li><strong><a href="https://dl.acm.org/doi/10.1145/2644805">In defense of soundiness: a manifesto</a></strong> (CACM 2015)</li>
+          <li><strong><a href="https://ieeexplore.ieee.org/document/6956589">Modeling and Discovering Vulnerabilities with Code Property Graphs</a></strong> (IEEE S&amp;P 2014)</li>
+          <li><strong><a href="https://cacm.acm.org/magazines/2010/2/69354-a-few-billion-lines-of-code-later/fulltext">A Few Billion Lines of Code Later</a></strong> (CACM 2010)</li>
+        </ul>
+      </main>
+
+      <footer class="site-footer"></footer>
+    </div>
+  </body>
+</html>
