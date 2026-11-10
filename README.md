@@ -112,12 +112,12 @@ Open an issue or PR if you'd like to contribute; revisions and additions are wel
 - **[CryptoLLM: Harnessing the Power of LLMs to Detect Cryptographic API Misuse](https://link.springer.com/chapter/10.1007/978-3-031-70879-4_18)** (ESORICS 2024)
 
 ### Industry / OSS
-- [Crypto Finder](https://github.com/scanoss/crypto-finder) — [SCANOSS](https://scanoss.com/)
-- [snyk](https://github.com/snyk/cli) — [Snyk AI Security Platform](https://snyk.io/)
-- [SonarQube](https://github.com/SonarSource/sonarqube) — [Sonar](https://www.sonarsource.com/products/sonarqube/)
-- [Opengrep](https://github.com/opengrep/opengrep) — [Opengrep](https://www.opengrep.dev/)
-- [Semgrep](https://github.com/semgrep/semgrep) — [Semgrep](https://semgrep.dev/)
-- [SpotBugs](https://github.com/spotbugs/spotbugs)
+- **[Crypto Finder](https://github.com/scanoss/crypto-finder)** — [SCANOSS](https://scanoss.com/)
+- **[snyk](https://github.com/snyk/cli)** — [Snyk AI Security Platform](https://snyk.io/)
+- **[SonarQube](https://github.com/SonarSource/sonarqube)** — [Sonar](https://www.sonarsource.com/products/sonarqube/)
+- **[Opengrep](https://github.com/opengrep/opengrep)** — [Opengrep](https://www.opengrep.dev/)
+- **[Semgrep](https://github.com/semgrep/semgrep)** — [Semgrep](https://semgrep.dev/)
+- **[SpotBugs](https://github.com/spotbugs/spotbugs)**
 
 ### Other
 - **[A Multimodal Framework for Detecting Cryptographic API Misuse](https://books.google.com/books?hl=en&lr=lang_en&id=lYEgEgAAQBAJ&oi=fnd&pg=PA303&dq=cryptographic+API+misuse&ots=9VvWXxcFFL&sig=GmIMi1OZ1LbROzau466DYIQG4dE#v=onepage&q=cryptographic%20API%20misuse&f=false)** (ICICS 2026)
