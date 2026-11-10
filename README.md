@@ -1,6 +1,6 @@
 # Crypto Misuse Detection Directory
 
-> Last updated: Nov 1, 2026
+> Last updated: Nov 9, 2026
 
 Tools, papers, benchmarks, and resources regarding cryptographic-API misuse detection.
 
@@ -101,6 +101,7 @@ Open an issue or PR if you'd like to contribute; revisions and additions are wel
 - **[K-Hunt: Pinpointing Insecure Cryptographic Keys from Execution Traces](https://dl.acm.org/doi/10.1145/3243734.3243783)** (CCS 2018) — [code](https://github.com/GoSSIP-SJTU/k-hunt)
 
 ### LLM-Based
+- **[Toward Comprehensive Cryptographic API Misuse Detection: Fine-Tuning Discriminative LLMs on Sliced Code Snippets](https://link.springer.com/chapter/10.1007/978-981-92-6837-5_20)** (ICICS 2026)
 - **[CarrierGuard-Java: Carrier-Aware Zero-Trust Code Ingestion Defense for LLM-Assisted Static Analysis Alert Triage](https://ieeexplore.ieee.org/document/11743566)** (ICCEA 2026)
 - **[Advancing Cryptographic Implementation Security through Expert-Driven CoT-RAG Architecture](https://ieeexplore.ieee.org/abstract/document/11619436)** (ICBASE 2026)
 - **[From Hallucination to Precision: Enhancing LLM Detection of Python Cryptographic API Misuses with Chain-of-Thought Prompting](https://ieeexplore.ieee.org/abstract/document/11582031)** (CSCWD 2026) — [artifact](https://github.com/feibaoBob/LLM-based_CAMD)
@@ -119,6 +120,7 @@ Open an issue or PR if you'd like to contribute; revisions and additions are wel
 - [SpotBugs](https://github.com/spotbugs/spotbugs)
 
 ### Other
+- **[A Multimodal Framework for Detecting Cryptographic API Misuse](https://books.google.com/books?hl=en&lr=lang_en&id=lYEgEgAAQBAJ&oi=fnd&pg=PA303&dq=cryptographic+API+misuse&ots=9VvWXxcFFL&sig=GmIMi1OZ1LbROzau466DYIQG4dE#v=onepage&q=cryptographic%20API%20misuse&f=false)** (ICICS 2026)
 - **[CryptoEval](https://arxiv.org/abs/2112.06146)** (IET Information Security 2023)
 
 ## LLM-Related
@@ -163,6 +165,7 @@ Open an issue or PR if you'd like to contribute; revisions and additions are wel
 - **[CodeQL](https://github.com/github/codeql)**
 
 ## Other
+- **[Summary of the Fourth International Workshop on Software Vulnerability Management (SVM 2026)](https://dl.acm.org/doi/10.1145/3844691.3844710)** (ACM SIGSOFT SEN 2026)
 - **[Analysis of Cryptographic CVEs: Lessons Learned and Perspectives](https://link.springer.com/chapter/10.1007/978-3-031-57537-2_13)** (2024)
 - **[Intelligent Detection of Cryptographic Misuse in Android Applications Based on Program Slicing andTransformer-Based Classifier](https://www.mdpi.com/2079-9292/12/11/2460)** (Electronics 2023)
 - **[Research on Cryptographic Misuse Detection for Android Applications Based on Dynamic and Static Combination](https://doi.org/10.1145/3603273.3634708)** (AAIA 2023)
